@@ -41,7 +41,7 @@ LLM inference is counter-intuitive when it comes to hardware. Unlike many other 
 - For some use cases you may want to provide detailed prompts, give examples (which improves LLM's ability to answer by a lot!), and large amounts of context like long documents or large code bases. Recent local LLMs support 32,000 - 128,000 tokens of context (1 token is about 0.75 words => ~20,000 - ~90,000 words).
 - Long context inflates the RAM requirements by several GBs, which can be a problem when trying to fit the model on a GPU especially.
 - Processing large context on a CPU instead of GPU is an order of magnitude slower, so you may end up waiting up to 20 minutes for an answer if you really use a lot of context.
-- A clever trick: KV Caching can be used when you only need to run the long context processing once and you can save the several GB of context locally, then load it when needed [TO ADD]. (I think this is the most under-utilized feature at the moment when running LLMs locally)
+- A clever trick: KV Caching can be used when you only need to run the long context processing once and you can save the several GB of context locally, then load it when needed (https://github.com/ggml-org/llama.cpp/blob/master/tools/main/README.md#prompt-caching). (I think this is the most under-utilized feature at the moment when running LLMs locally)
 
 ### Casual Use
 Most modern computers should be able to run a small LLM at a usable speed for chatting. The easiest way to find out whether your machine can manage is to download one of the recommendations from the Software Setup section and try. See Model Recommendations section for figuring out what might be a good LLM to try.
@@ -120,7 +120,7 @@ I have less personal experience with running LLMs on these platforms.
 
 ### Model Sizes
 - Generally, the larger the model, the more "intelligent" it is—it can handle more complex and ambiguous tasks.
-- "Thinking" models are relatively recent and try to make use of Test-Time Scaling [TO ADD] locally. They take longer to respond as they first need to generate intermediate reasoning steps.
+- "Thinking" models are relatively recent and try to make use of test-time / inference-time compute (https://openai.com/index/learning-to-reason-with-llms/) locally. They take longer to respond as they first need to generate intermediate reasoning steps.
 
 To peruse some popular models, visit Ollama: https://ollama.com/library. Generally, the download size is close to the bare minimum of what amount of memory you need to run the model on your system + add a few GB buffer for the context in the prompt to be safe. 
 
