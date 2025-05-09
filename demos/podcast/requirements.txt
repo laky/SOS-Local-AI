@@ -1,0 +1,10 @@
+numpy==2.2.5
+langgraph==0.3.34
+langchain_core==0.3.55
+langchain_openai==0.3.14
+nari-tts @ git+https://github.com/nari-labs/dia.git@09b748e3626b3e6d1c9d4690e980df9a2a34a15d
+pydantic==2.11.3
+requests==2.32.3
+soundfile==0.13.1
+trafilatura==2.0.0
+lxml_html_clean

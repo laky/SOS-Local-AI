@@ -11,6 +11,8 @@ from langgraph.graph import StateGraph, START, END
 import soundfile as sf
 from dia.model import Dia
 
+LLM_MODEL="lmstudio-community/gemma-3-4b-it-qat"
+
 SAMPLE_AUDIO_PATH = "sample_audio.wav"
 SAMPLE_AUDIO_TEXT = """
 [S1] Hey. how are you doing?  
@@ -56,10 +58,9 @@ prompt: ChatPromptTemplate = ChatPromptTemplate.from_messages([
 
 
 llm = ChatOpenAI(
-    model="lmstudio-community/gemma-3-27b-it-qat",
+    model=LLM_MODEL,
     openai_api_base="http://localhost:1234/v1",
     openai_api_key="lm-studio",
-    temperature=0.6,
 )
 
 class State(BaseModel):

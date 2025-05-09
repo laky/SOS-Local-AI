@@ -59,7 +59,7 @@ If you want to add a GPU to your setup, I would recommend a used RTX 3090 24GB f
 ### Playing with the State-of-the-Art
 Again, the best out-of-the-box solution would be the Apple Mac M-series Max and Ultra hardware. MacBooks go up to 128GB RAM (~$5k) and Mac Studio M3 Ultra is up to 512GB RAM (~$10k).
 
-Custom PC builds using motherboards with support for 8-channel and 12-channel RAM and server CPUs (Intel Xeon, AMD EPYC / Threadripper) can reach competitive RAM bandwidths and are currently the only feasible option to run the largest models locally (DeepSeek R1 has 671 billion parameters and needs 512GB-1TB of memory, DeepSeek R2 is rumored to be double that size). Expect costs of ~$5,000 upwards unless you figure out how to combine and buy less mainstream server parts very cheaply. (I am contemplating building something like this: https://www.reddit.com/r/LocalLLaMA/comments/1k8xyvp/finally_got_10ts_deepseek_v30324_hybrid_fp8q4_k_m/)
+Custom PC builds using motherboards with support for 8-channel and 12-channel RAM and server CPUs (Intel Xeon, AMD EPYC / Threadripper) can reach competitive RAM bandwidths and are currently the only feasible option to run the largest models locally (DeepSeek R1 has 671 billion parameters and needs 512GB-1TB of memory, DeepSeek R2 is rumored to be double that size). Expect costs of ~$5,000 upwards unless you figure out how to combine and buy less mainstream server parts very cheaply. (I am contemplating building something like [this](https://www.reddit.com/r/LocalLLaMA/comments/1k8xyvp/finally_got_10ts_deepseek_v30324_hybrid_fp8q4_k_m/))
 
 ### Training and Fine-Tuning
 When it comes to LLM training and fine-tuning, the tables turn, and Nvidia GPUs are strongly preferred.
@@ -144,6 +144,18 @@ You can experiment a bit with different quantizations and model settings if thin
 On Mac, you may want to search for mlx-community models for slightly faster speeds instead of the links provided below.
 
 There are also many fine-tuned models from e.g., Nous, Hermes, Dolphin that might be interesting, but I tend to stick with the main ones for now. Quantized models from bartowski and unsloth are also generally high quality and can be used instead of the lmstudio-community ones. I tend to avoid models from other entities and users, there's already so much complexity and uncertainty when using LLMs that I do not want to add to it.
+
+### Models for different systems
+Below is a bunch of models that I think should work well on all sorts of systems. Lower your expectations for the really small models.
+
+If you want to try something that you cannot fit on your machine, there are some options:
+- vast.ai (https://vast.ai/) - Rent a machine with GPUs / lots of RAM
+- RunPod (https://www.runpod.io/) - Rent a machine with GPUs
+- OpenRouter (https://openrouter.ai/) - APIs to use different models, your milage may vary based on what provider you get linked to...
+- Together AI (https://www.together.ai/) - APIs to use different models
+- Groq (https://groq.com/) (not to be confused with Elon's Grok...) - Super fast inference HW with online APIs for models
+
+*Note: vast.ai and RunPod use peer machines and people might be able to access the data. OpenRouter is popular, but I haven't played with. I've had good experience with Together AI and Groq so far, but they are more abstract, i.e., you don't set up your model etc, you just use the already working API.*
 
 #### For Systems with RAM (+ VRAM) < 8GB
 This is pushing it a bit and make sure you don't have high expectations about the models. They are best used for very clear and easy tasks (summarization, rewriting an email, little fun chats, etc.). Don't expect models to deal with ambiguity, show solid logic or reasoning, and don't rely on them when they pretend to know things.
@@ -251,11 +263,11 @@ You can run the absolute state of the art of the local open-source models. These
 - Llama Scout (4-bit / 6-bit) - Similar to the above. Largest model I can fit at the moment, but this one also can use some higher quantization version. I need to still test what it is properly capable of. 
     - LM Studio: q4_k_xl and q6_k from https://model.lmstudio.ai/download/unsloth/Llama-4-Scout-17B-16E-Instruct-GGUF
 
-Contemplating building a workstation/server with 512+GB multi-channel RAM to be able to play with running DeepSeek R1 locally. Hit me up if you're curious about this... (likely will follow https://www.reddit.com/r/LocalLLaMA/comments/1k8xyvp/finally_got_10ts_deepseek_v30324_hybrid_fp8q4_k_m/, expected costs $4-5k + I already own an RTX 3090 24GB and RTX A2000 12GB).
+Contemplating building a workstation/server with 512-1024 GB multi-channel RAM to be able to play with running DeepSeek R1, Llama Maverick, Qwen 235B locally. Hit me up if you're curious about this...
 
 ## Demos
 
-#### Langgraph
+### Langgraph
 - Workflows with smaller and more specific tasks for LLMs are more likely to succeed.
 - Allows combining tasks in non-trivial ways and using AI agents.
 - Quick intro to Workflows and Agents 101 and the differences between them: [video](https://www.youtube.com/watch?v=aHCDrAbH_go), [docs](https://langchain-ai.github.io/langgraph/tutorials/workflows/)
@@ -267,8 +279,8 @@ See [Transcribe and Summarize](demos/transcribe_summarize/README.md) for details
 [Content to be added]
 
 ## References and Resources
-- LocalLlama Reddit - Excellent community of tinkerers using local LLMs
-- llama.cpp - The underlying LLM engine used by Ollama and LM Studio
+- LocalLlama Reddit (https://www.reddit.com/r/LocalLLaMA/) - Excellent community of tinkerers using local LLMs
+- llama.cpp (https://github.com/ggml-org/llama.cpp) - The underlying LLM engine used by Ollama and LM Studio. Kind of a start of this whole run LLMs locally in a fast and easy way craze.
   - Alternatives: ExLlama, vLLM
-- Hugging Face - Where all the models are stored
-- Unsloth AI - Fine-tuning with limited GPU memory
+- Hugging Face (https://huggingface.co/) - Where all the models are stored
+- Unsloth AI (https://unsloth.ai/) - Fine-tuning with efficient use of GPU memory. They have very nice Colab examples for finetuning different models, e.g. https://colab.research.google.com/drive/135ced7oHytdxu3N2DNe1Z0kqjyYIkDXp.

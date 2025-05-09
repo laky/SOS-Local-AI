@@ -1,5 +1,7 @@
 # Transcribe and Summarize
 
+The workflow here uses Whisper.cpp to transcribe an audio recording and pass it to an LLM running in LM Studio to create a summary in markdown format.
+
 ## Requirements
 
 Make sure you have LM Studio installed and the right model installed. For the demo I used `qwen3-30b-a3b`, but you can easily define some other model to be called in the python file by changing the `LLM_MODEL` variable to the model identifier.
