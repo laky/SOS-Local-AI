@@ -2,8 +2,7 @@
 
 The workflow here uses a recent text-to-speech model Dia (https://github.com/nari-labs/dia) to create a podcast with 2 speakers discussing a topic covered in the URL you provide. 
 
-Example:
-<video src="https://github.com/laky/SOS-Local-AI/raw/refs/heads/main/demos/podcast/podcast.mp3"></video>
+Example: https://github.com/laky/SOS-Local-AI/raw/refs/heads/main/demos/podcast/podcast.mp3
 
 ## Requirements
 
