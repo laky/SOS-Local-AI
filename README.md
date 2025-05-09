@@ -276,7 +276,7 @@ Contemplating building a workstation/server with 512-1024 GB multi-channel RAM t
 See [Transcribe and Summarize](demos/transcribe_summarize/README.md) for details on how to transcribe and summarize audio recordings using whisper.cpp and LM Studio.
 
 ### Generate a Podcast About a Site
-[Content to be added]
+See [Generate a Podcast](demos/podcast/README.md) for details on how to generate a podcast with two speakers discussing a topic from a URL using Dia and LM Studio.
 
 ## References and Resources
 - LocalLlama Reddit (https://www.reddit.com/r/LocalLLaMA/) - Excellent community of tinkerers using local LLMs
