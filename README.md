@@ -57,7 +57,7 @@ External GPUs are surprisingly performant. The bottleneck of using the USB/Thund
 If you want to add a GPU to your setup, I would recommend a used RTX 3090 24GB for around $700 as the best bang-for-the-buck Nvidia GPU for LLMs at the moment + it games very well (if you get bored of LLMs...)!
 
 ### Playing with the State-of-the-Art
-Again, the best out-of-the-box solution would be the Apple Mac M-series Max and Ultra hardware. MacBooks go up to 128GB RAM (~$5k) and Mac Studio M3 Ultra is up to 512GB RAM (~$10k).
+Again, the best out-of-the-box solution would be the Apple Mac M-series Max and Ultra hardware. MacBooks go up to 128GB RAM (cca $5k) and Mac Studio M3 Ultra is up to 512GB RAM (cca $10k).
 
 Custom PC builds using motherboards with support for 8-channel and 12-channel RAM and server CPUs (Intel Xeon, AMD EPYC / Threadripper) can reach competitive RAM bandwidths and are currently the only feasible option to run the largest models locally (DeepSeek R1 has 671 billion parameters and needs 512GB-1TB of memory, DeepSeek R2 is rumored to be double that size). Expect costs of ~$5,000 upwards unless you figure out how to combine and buy less mainstream server parts very cheaply. (I am contemplating building something like [this](https://www.reddit.com/r/LocalLLaMA/comments/1k8xyvp/finally_got_10ts_deepseek_v30324_hybrid_fp8q4_k_m/))
 
