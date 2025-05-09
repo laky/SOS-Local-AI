@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Models and input data
+demos/transcribe_summarize/*.m4a
+demos/transcribe_summarize/*.wav
+demos/transcribe_summarize/*.bin
